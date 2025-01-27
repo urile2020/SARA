@@ -1,3 +1,4 @@
+// העלאת תמונות
 document.getElementById('imageUpload').addEventListener('change', function (event) {
     const file = event.target.files[0];
     if (file) {
@@ -11,6 +12,7 @@ document.getElementById('imageUpload').addEventListener('change', function (even
     }
 });
 
+// העלאת סרטונים
 document.getElementById('videoUpload').addEventListener('change', function (event) {
     const file = event.target.files[0];
     if (file) {
@@ -25,6 +27,7 @@ document.getElementById('videoUpload').addEventListener('change', function (even
     }
 });
 
+// העלאת זיכרונות
 document.getElementById('submitMemory').addEventListener('click', function () {
     const memoryText = document.getElementById('memoryText').value;
     if (memoryText) {
@@ -32,5 +35,16 @@ document.getElementById('submitMemory').addEventListener('click', function () {
         memoryDiv.textContent = memoryText;
         document.getElementById('memoryList').appendChild(memoryDiv);
         document.getElementById('memoryText').value = '';
+    }
+});
+
+// העלאת דברי הספד
+document.getElementById('submitTribute').addEventListener('click', function () {
+    const tributeText = document.getElementById('tributeText').value;
+    if (tributeText) {
+        const tributeDiv = document.createElement('div');
+        tributeDiv.textContent = tributeText;
+        document.getElementById('tributeList').appendChild(tributeDiv);
+        document.getElementById('tributeText').value = '';
     }
 });
