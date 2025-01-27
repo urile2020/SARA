@@ -9,9 +9,23 @@
 <body>
     <header>
         <h1>אתר זיכרון לאמא</h1>
+        <nav>
+            <ul>
+                <li><a href="#intro">טקסטים מרגשים</a></li>
+                <li><a href="#gallery">גלריית תמונות</a></li>
+                <li><a href="#videos">סרטונים</a></li>
+                <li><a href="#memories">זיכרונות</a></li>
+                <li><a href="#tributes">דברי הספד וזיכרון</a></li>
+            </ul>
+        </nav>
     </header>
 
     <main>
+        <section id="intro">
+            <h2>טקסטים מרגשים</h2>
+            <div id="editorText" contenteditable="true">כאן תוכל להכניס טקסטים מרגשים לזכר אמך...</div>
+        </section>
+
         <section id="gallery">
             <h2>גלריית תמונות</h2>
             <input type="file" id="imageUpload" accept="image/*">
@@ -29,6 +43,13 @@
             <textarea id="memoryText" placeholder="הקלד/י כאן את זיכרונך..."></textarea>
             <button id="submitMemory">שלח זיכרון</button>
             <div id="memoryList"></div>
+        </section>
+
+        <section id="tributes">
+            <h2>דברי הספד וזיכרון</h2>
+            <textarea id="tributeText" placeholder="הקלד/י כאן דברי הספד..."></textarea>
+            <button id="submitTribute">שלח דברי הספד</button>
+            <div id="tributeList"></div>
         </section>
     </main>
 
