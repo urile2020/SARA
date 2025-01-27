@@ -1,50 +1,38 @@
-// העלאת תמונות
-document.getElementById('imageUpload').addEventListener('change', function (event) {
-    const file = event.target.files[0];
+function login() {
+    const adminPassword = document.getElementById('adminPassword').value;
+    const correctPassword = 'YOUR_PASSWORD_HERE';  // Change this to your actual password
+
+    if (adminPassword === correctPassword) {
+        enableAdminFeatures();
+        document.getElementById('login').style.display = 'none';
+    } else {
+        alert('סיסמה שגויה');
+    }
+}
+
+function enableAdminFeatures() {
+    document.getElementById('backgroundUpload').disabled = false;
+    document.getElementById('imageUpload').disabled = false;
+    document.getElementById('videoUpload').disabled = false;
+    document.getElementById('videoLink').disabled = false;
+    document.getElementById('articleLink').disabled = false;
+    document.getElementById('memoryText').disabled = false;
+}
+
+function uploadBackground() {
+    const file = document.getElementById('backgroundUpload').files[0];
+    const reader = new FileReader();
+
+    reader.onloadend = function () {
+        document.body.style.backgroundImage = `url(${reader.result})`;
+    };
+
     if (file) {
-        const reader = new FileReader();
-        reader.onload = function (e) {
-            const img = document.createElement('img');
-            img.src = e.target.result;
-            document.getElementById('imageGallery').appendChild(img);
-        };
         reader.readAsDataURL(file);
     }
-});
+}
 
-// העלאת סרטונים
-document.getElementById('videoUpload').addEventListener('change', function (event) {
-    const file = event.target.files[0];
-    if (file) {
-        const reader = new FileReader();
-        reader.onload = function (e) {
-            const video = document.createElement('video');
-            video.src = e.target.result;
-            video.controls = true;
-            document.getElementById('videoGallery').appendChild(video);
-        };
-        reader.readAsDataURL(file);
-    }
-});
-
-// העלאת זיכרונות
-document.getElementById('submitMemory').addEventListener('click', function () {
-    const memoryText = document.getElementById('memoryText').value;
-    if (memoryText) {
-        const memoryDiv = document.createElement('div');
-        memoryDiv.textContent = memoryText;
-        document.getElementById('memoryList').appendChild(memoryDiv);
-        document.getElementById('memoryText').value = '';
-    }
-});
-
-// העלאת דברי הספד
-document.getElementById('submitTribute').addEventListener('click', function () {
-    const tributeText = document.getElementById('tributeText').value;
-    if (tributeText) {
-        const tributeDiv = document.createElement('div');
-        tributeDiv.textContent = tributeText;
-        document.getElementById('tributeList').appendChild(tributeDiv);
-        document.getElementById('tributeText').value = '';
-    }
-});
+function updateTitle() {
+    const title = document.getElementById('mainTitle').value;
+    document.title = title;
+}
