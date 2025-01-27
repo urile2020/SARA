@@ -1,6 +1,6 @@
 function login() {
     const adminPassword = document.getElementById('adminPassword').value;
-    const correctPassword = 'YOUR_PASSWORD_HERE';  // Change this to your actual password
+    const correctPassword = 'SABAMENACHEM1234$';  // Change this to your actual password
 
     if (adminPassword === correctPassword) {
         enableAdminFeatures();
