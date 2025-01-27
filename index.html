@@ -3,53 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>אתר זיכרון לאמא</title>
+    <title>אתר זיכרון לסבא וסבתא</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>אתר זיכרון לאמא</h1>
+        <input type="text" id="mainTitle" value="אתר זיכרון לסבא וסבתא" oninput="updateTitle()">
         <nav>
             <ul>
-                <li><a href="#intro">טקסטים מרגשים</a></li>
-                <li><a href="#gallery">גלריית תמונות</a></li>
+                <li><a href="#images">תמונות</a></li>
                 <li><a href="#videos">סרטונים</a></li>
-                <li><a href="#memories">זיכרונות</a></li>
-                <li><a href="#tributes">דברי הספד וזיכרון</a></li>
+                <li><a href="#links">קישורים</a></li>
+                <li><a href="#memories">דברי זיכרון</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section id="intro">
-            <h2>טקסטים מרגשים</h2>
-            <div id="editorText" contenteditable="true">כאן תוכל להכניס טקסטים מרגשים לזכר אמך...</div>
+        <section id="login">
+            <h2>התחברות מנהל</h2>
+            <input type="password" id="adminPassword" placeholder="הכנס סיסמה">
+            <button onclick="login()">התחבר</button>
         </section>
-
-        <section id="gallery">
-            <h2>גלריית תמונות</h2>
-            <input type="file" id="imageUpload" accept="image/*">
-            <div id="imageGallery"></div>
+        <section id="background">
+            <h2>תמונת רקע</h2>
+            <input type="file" id="backgroundUpload" accept="image/*" onchange="uploadBackground()" disabled>
         </section>
-
+        <section id="images">
+            <h2>תמונות</h2>
+            <input type="file" id="imageUpload" accept="image/*" disabled>
+        </section>
         <section id="videos">
             <h2>סרטונים</h2>
-            <input type="file" id="videoUpload" accept="video/*">
-            <div id="videoGallery"></div>
+            <input type="file" id="videoUpload" accept="video/*" disabled>
+            <input type="text" id="videoLink" placeholder="הכנס קישור לסרטון" disabled>
         </section>
-
+        <section id="links">
+            <h2>קישורים</h2>
+            <input type="text" id="articleLink" placeholder="הכנס קישור לכתבה" disabled>
+        </section>
         <section id="memories">
-            <h2>זיכרונות</h2>
-            <textarea id="memoryText" placeholder="הקלד/י כאן את זיכרונך..."></textarea>
-            <button id="submitMemory">שלח זיכרון</button>
-            <div id="memoryList"></div>
-        </section>
-
-        <section id="tributes">
-            <h2>דברי הספד וזיכרון</h2>
-            <textarea id="tributeText" placeholder="הקלד/י כאן דברי הספד..."></textarea>
-            <button id="submitTribute">שלח דברי הספד</button>
-            <div id="tributeList"></div>
+            <h2>דברי זיכרון</h2>
+            <textarea id="memoryText" placeholder="הקלד/י כאן דברי זיכרון..." disabled></textarea>
         </section>
     </main>
 
